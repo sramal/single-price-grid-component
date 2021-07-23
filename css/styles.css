@@ -1,0 +1,151 @@
+/************************** Import google fonts *************************/
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+
+/************************** Variables **********************************/
+:root {
+  --fontFamily: "Karla", sans-serif;
+
+  --fontSize: 1rem;
+
+  --cyan: hsl(179, 62%, 43%);
+  --lightCyan: hsl(179, 62%, 50%);
+  --brightYellow: hsl(71, 73%, 54%);
+  --lightGray: hsl(204, 43%, 93%);
+  --grayishBlue: hsl(218, 22%, 67%);
+}
+
+/************************************************************************/
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  height: 100vh;
+  align-items: center;
+  justify-items: center;
+
+  font-size: var(--fontSize);
+  font-family: var(--fontFamily);
+  background: var(--lightGray);
+}
+
+/* Container which holds all three cards */
+.container {
+  width: 60%;
+
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.75fr 1fr;
+
+  border-radius: 7px 7px 7px 7px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.container > * {
+  padding: 25px 30px 25px 35px;
+}
+
+/* Top card CSS */
+.card-add {
+  grid-column: 1 / -1;
+  background: white;
+  justify-items: start;
+
+  border-radius: 7px 7px 0 0;
+}
+
+.card-add h2 {
+  color: var(--cyan);
+}
+
+.card-add h3 {
+  color: var(--brightYellow);
+}
+
+.card-add p {
+  color: var(--lightGray);
+  line-height: 1.7;
+}
+
+/* Bottom left card CSS */
+.card-pricing {
+  background: var(--cyan);
+  color: var(--lightGray);
+
+  border-radius: 0 0 0 7px;
+}
+
+.card-pricing .price {
+  display: flex;
+  align-items: center;
+}
+
+.card-pricing .price-num {
+  font-size: 32px;
+  padding-right: 8px;
+  color: white;
+}
+
+.card-pricing .price-text {
+  opacity: 0.7;
+}
+
+.card-pricing button {
+  border: none;
+  background: var(--brightYellow);
+  color: var(--lightGray);
+  width: 90%;
+  margin: 25px auto;
+  height: 40px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 7px;
+  font-family: var(--fontFamily);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Bottom right card */
+.card-reason {
+  background: var(--lightCyan);
+  color: var(--lightGray);
+
+  border-radius: 0 0 7px 0;
+}
+
+.card-reason ul {
+  padding: 0;
+  list-style: none;
+}
+
+.card-reason li {
+  padding-bottom: 5px;
+  opacity: 0.7;
+}
+
+.card-reason li:last-child {
+  padding-bottom: 0;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 90%;
+
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
+
+    border-radius: 7px 7px 7px 7px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+
+  .card-add {
+    border-radius: 7px 7px 0 0;
+  }
+
+  .card-pricing {
+    border-radius: 0 0 0 0px;
+  }
+
+  .card-reason {
+    border-radius: 0 0 7px 7px;
+  }
+}
